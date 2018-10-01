@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "restful api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node sever.js",
+    "server":"nodemon server.js"
+  },
+  "author": "kasuo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose":"5.3.0",
+    "bcrypt-nodejs":"0.0.3",
+    "gravatar":"1.6.0",
+    "jsonwebtoken":"8.3.0",
+    "passport-jwt":"4.0.0",
+    "passport":"0.4.0"
+  }
+}
