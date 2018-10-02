@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../../models/User");
 const gravatar = require('gravatar');
 const jwt = require('jsonwebtoken');
-const passport =require("passport")
+const passport =require("passport");
 
 
 // $route GET api/users/test
@@ -94,9 +94,9 @@ router.post("/login",(req,res) => {
 // $route Get api/users/current
 // $desc return current user
 // @access private
-router.get("/current",passport.initialize("jwt",{session:false}),(req,res) => {
+router.get("/current",passport.authenticate("jwt",{session:false}),(req,res) => {
   
-    res.json({msg:"success"});
+    res.json({msg:"success1"});
 
 })
 

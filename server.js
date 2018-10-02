@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 
 // 引入users.js
 const users=require("./routes/api/users");
-
+// 验证token,返回用户信息
 const passport=require("passport")
 
 // app.get("/",(req,res) => {
@@ -32,12 +32,12 @@ mongoose.connect(db, {useNewUrlParser:true})
 // db.on('error', console.error.bind(console, '连接错误'));
 // db.once('open', function() {console.log(new Date+'  http:localhost:80连接成功')});
 // db.on("disconnected", function () { console.log("MongoDB connected disconnected.")});
+// passport 初始化
+app.use(passport.initialize());
+
+require("./config/passport")(passport);
 
 app.listen(port,() => {
     console.log(`Server running on port ${port}`);
 })
 
-// passport 初始化
-app.use(passport.initialize());
-
-require("./config/passport")(passport);

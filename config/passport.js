@@ -1,4 +1,3 @@
-// 验证token
 const mongoose = require('mongoose'); 
 const JwtStrategy = require('passport-jwt').Strategy,
 ExtractJwt = require('passport-jwt').ExtractJwt;
@@ -11,6 +10,7 @@ opts.secretOrKey = keys.secretOrKey;
 
 module.exports = passport => {
     passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-       console.log(jwt_payload);
+    //    console.log(jwt_payload);
+    
     }));
 }
