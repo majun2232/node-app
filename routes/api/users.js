@@ -91,12 +91,16 @@ router.post("/login",(req,res) => {
               )
         })
 })
-// $route Get api/users/current
+// $route Get api/users/current, 验证得到用户信息
 // $desc return current user
 // @access private
 router.get("/current",passport.authenticate("jwt",{session:false}),(req,res) => {
   
-    res.json({msg:"success1"});
+    res.json({
+        id:req.user.id,
+        name:req.user.name,
+        email:req.user.email
+    });
 
 })
 

@@ -1,3 +1,4 @@
+// 验证用户信息
 const mongoose = require('mongoose'); 
 const JwtStrategy = require('passport-jwt').Strategy,
 ExtractJwt = require('passport-jwt').ExtractJwt;
@@ -11,6 +12,15 @@ opts.secretOrKey = keys.secretOrKey;
 module.exports = passport => {
     passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
     //    console.log(jwt_payload);
-    
-    }));
+    User.findById(jwt_payload.id)
+        .then(user => {
+            if(user){
+                return done(null,user);
+            }
+            return done(null,false);
+        })
+        .catch(err => console.log(err));
+        
+    })   
+    );
 }
