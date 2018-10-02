@@ -1,7 +1,7 @@
 // login & register
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt-nodejs");
+const bcrypt = require("bcryptjs");
 const User = require("../../models/User");
 const gravatar = require('gravatar');
 const jwt = require('jsonwebtoken');
@@ -18,7 +18,7 @@ router.get("/test", (req, res) => {
     })
 })
 
-// $route Post api/users/test
+// $route Post api/users/register
 // $desc 返回的请求json数据
 // @access public
 
@@ -44,7 +44,7 @@ router.post("/register", (req, res) => {
                 })
                 // 密码加密
                 bcrypt.genSalt(10, function (err, salt) {
-                    bcrypt.hash(newUser.password, salt, null, (err, hash) => {
+                    bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
                         // Store hash in your password DB.
                         newUser.password = hash;
@@ -65,7 +65,7 @@ router.post("/login",(req,res) => {
     const email = req.body.email;
     const password = req.body.password;
     // 查询数据库
-    User.findOne(email)
+    User.findOne({email})
         .then(user => {
             if(!user){
                 return res.status(404).json({email:"用户不存在"});
@@ -82,7 +82,8 @@ router.post("/login",(req,res) => {
                               token:"Bearer " + token
                           });
                       }
-                    )                 
+                    ) 
+                    // res.json({msg:"success"});               
                   }else{
                       return(res.status(400).json({password:"密码错误!"}));
                   }                 
