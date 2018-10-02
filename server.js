@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 
 // 引入users.js
 const users=require("./routes/api/users");
+const profiles=require("./routes/api/profiles");
 // 验证token,返回用户信息
 const passport=require("passport")
 
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 
 // 使用routes
 app.use("/api/users",users);
+app.use("/api/profiles",profiles);
 
 const port = process.env.PORT || 8081;
 // DB config
