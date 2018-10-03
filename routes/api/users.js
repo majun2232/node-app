@@ -13,11 +13,11 @@ const passport =require("passport");
 // @access public
 
 // 开发时用于bug调试
-// router.get("/test", (req, res) => {
-//     res.json({
-//         msg: "login works"
-//     })
-// })
+router.get("/test", (req, res) => {
+    res.json({
+        msg: "login works"
+    })
+})
 
 // $route Post api/users/register
 // $desc 返回的请求json数据

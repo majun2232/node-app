@@ -4,8 +4,11 @@
   "description": "restful api",
   "main": "server.js",
   "scripts": {
+    "client-install":"npm install --prefix clent",
+    "client":"npm start --prefix client",
     "start": "node sever.js",
-    "server":"nodemon server.js"
+    "server":"nodemon server.js",
+    "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "author": "kasuo",
   "license": "ISC",
@@ -17,6 +20,7 @@
     "jsonwebtoken":"8.3.0",
     "passport-jwt":"4.0.0",
     "passport":"0.4.0",
-    "body-parser":"1.18.3"
+    "body-parser":"1.18.3",
+    "validator":"10.8.0"
   }
 }
