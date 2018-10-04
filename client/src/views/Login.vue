@@ -77,7 +77,7 @@
                                 localStorage.setItem("eleToken", token);
                                 // 解析token
                                 const decode = jwt_decode(token);
-                                console.log(decode);
+                                // console.log(decode);
 
                                 // token存储到vuex中
                                 this.$store.dispatch("setIsAutnenticated", !this.isEmpty(decode));

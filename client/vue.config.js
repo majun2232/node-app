@@ -45,8 +45,8 @@ module.exports = {
         // proxy: 'http://localhost:8081/api/', // 配置跨域处理,只有一个代理
         proxy: { // 配置跨域
             '/apis': {
-                // target: 'http://localhost:8081/',
-                target: 'http://10.22.199.116:8081/',//ip以后会变,不建议用
+                target: 'http://localhost:8081/',
+                // target: 'http://10.22.199.116:8081/',//ip以后会变,不建议用
                 // target:'https://www.easy-mock.com/',
                 ws: true,
                 changOrigin: true,
