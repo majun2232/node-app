@@ -21,7 +21,7 @@
                     <el-button type="primary" size ="small" icon="search" @click='onScreeoutMoney()'>筛选</el-button>
                 </el-form-item>
                  <el-form-item class="btnRight">
-                    <el-button type="primary" size ="small" icon="view" @click='onAddMoney()'>添加</el-button>
+                    <el-button type="primary" size ="small" icon="view" v-if="user.identity == 'manager'"  @click='onAddMoney()'>添加</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -107,12 +107,14 @@
                             icon='edit' 
                             size="small"
                             @click='onEditMoney(scope.row)'
+                            v-if="user.identity == 'manager'"
                         >编辑</el-button>
                         <el-button 
                             type="danger" 
                             icon='delete' 
                             size="small"
                             @click='onDeleteMoney(scope.row,scope.$index)'
+                            v-if="user.identity == 'manager'"
                         >删除</el-button>
                     </template>
                 </el-table-column>
@@ -178,6 +180,12 @@ export default {
         endTime: ""
       }
     };
+  },
+//   要使用vux里面的数据,必须添加computed属性
+  computed: {
+      user(){
+         return this.$store.getters.user;
+      }
   },
   components: {
     DialogFound
