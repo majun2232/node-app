@@ -21,11 +21,11 @@ app.use(bodyParser.json());
 app.use("/api/users",users);
 app.use("/api/profiles",profiles);
 
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 5000;
 // DB config
 const db = require("./config/keys").mongoURI;
 mongoose.connect(db, {useNewUrlParser:true})
-        .then(()=> console.log(new Date+'  http:localhost:80连接成功'))
+        .then(()=> console.log(new Date+'  http:localhost:5000连接成功'))
         .catch(err => console.log("MongoDB 连接错误"));
 
 // 为这次连接绑定事件(另外的连接方法,也可行)

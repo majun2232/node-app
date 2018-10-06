@@ -41,6 +41,7 @@
 </template>
 
 <script>
+   import loginMothod from '../utils/login.js'
     export default {
         name: 'register',
         data() {
@@ -128,10 +129,25 @@
                                     type: 'success'
                                 })
                             })
-                            .catch(err => res.status(404).json("跨域请求失败!"))
+                            .catch(res => {
+                                // 注册成功
+                                this.$message({
+                                    message: "!",
+                                    type: 'success'
+                                })
+                            });
                         this.$router.push('/login')
+                    //   debugger
+                    //    loginMothod.submit({"email":this.registerUser.email,"password":this.registerUser.password2})
+                    //    this.$router.push('/index')
+
+
+
                     }
                 });
+
+
+                
             }
         }
     }

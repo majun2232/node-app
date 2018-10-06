@@ -2,11 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from './views'
 import Register from './views/Register'
-// import notfound from './views/404'
+import notfound from './views/404'
 import Login from './views/Login'
 import Home from './views/Home'
 import infoshow from './views/infoshow'
-import foundlist1 from './views/FundList1'
+import foundlist from './views/FundList'
 Vue.use(Router)
 
 
@@ -40,8 +40,8 @@ const router=new Router({
         },
         {
           path: '/foundlist',
-          name: 'FundList1',
-          component: foundlist1,
+          name: 'FundList',
+          component: foundlist,
         }
       ]
     },
@@ -56,11 +56,11 @@ const router=new Router({
       name: 'register',
       component: Register
     } ,
-    // {
-    //   path: '*',
-    //   name: '/404',
-    //   component: notfound
-    // }
+    {
+      path: '*',
+      name: '/404',
+      component: notfound
+    }
   ]
 })
 

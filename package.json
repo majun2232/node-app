@@ -4,7 +4,7 @@
   "description": "restful api",
   "main": "server.js",
   "scripts": {
-    "client-install":"npm install --prefix clent",
+    "client-install":"npm install --prefix client",
     "client":"npm start --prefix client",
     "start": "node sever.js",
     "server":"nodemon server.js",
@@ -21,6 +21,11 @@
     "passport-jwt":"4.0.0",
     "passport":"0.4.0",
     "body-parser":"1.18.3",
-    "validator":"10.8.0"
+    "validator":"10.8.0",
+    "concurrently":"4.0.1",
+    "nodemon":"1.18.4"
+  },
+  "devDependencies": {
+   
   }
 }

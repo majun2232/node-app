@@ -2,7 +2,7 @@
     <header class="head-nav">
         <el-row>
             <el-col :span="6" class="logo-contener">
-                <img src="../assets/logo.jpg" alt="" class="logo">
+                <img src='../assets/logo.jpg' alt="" class="logo">
                 <span class="title">卡索在线后台管理系统</span>
             </el-col>
             <el-col :span="6" class="user">
@@ -38,11 +38,6 @@
                 return this.$store.getters.user;
             }
         },
-        data() {
-            return {
-
-            }
-        },
         methods: {
             setDialogInfo(cmdItem) {
                 //    console.log(cmdItem)
@@ -75,8 +70,7 @@
 <style scoped>
     .head-nav {
         width: 100%;
-        height: 60px;
-        min-width: 600px;
+        height: 60px;     
         padding: 5px;
         background: #324057;
         color: #fff;

@@ -1,9 +1,11 @@
 // login & register
 const express = require("express");
 const router = express.Router();
+// 用于密码加密
 const bcrypt = require("bcryptjs");
 const User = require("../../models/User");
 const gravatar = require('gravatar');
+// JSON Web Token（JWT）是一个非常轻巧的规范。这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息。
 const jwt = require('jsonwebtoken');
 const passport =require("passport");
 

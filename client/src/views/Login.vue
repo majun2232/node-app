@@ -13,7 +13,8 @@
                     </el-form-item>
 
                     <el-form-item label="密码" prop="password">
-                        <el-input type="password" v-model="loginUser.password" placeholder="请输入密码"></el-input>
+                        <!-- 绑定一个keyup事件,实现按回车能模拟点击按钮,触发登陆 -->
+                        <el-input type="password" v-model="loginUser.password" placeholder="请输入密码" @keyup.enter.native="submitForm('loginForm')"></el-input>
                     </el-form-item>
 
                     <el-form-item>
@@ -31,7 +32,7 @@
 </template>
 
 <script>
-    import jwt_decode from 'jwt-decode'
+    import loginMothod from '../utils/login.js'
     export default {
         name: 'Login',
         data() {
@@ -62,40 +63,11 @@
         },
         methods: {
             submitForm(formName) {
-
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        // alert('submit!');
-                        this.$axios.post('apis/api/users/login', this.loginUser)
-                            .then(res => {
-                                // 获取token
-                                // console.log(res)
-                                const {
-                                    token
-                                } = res.data;
-                                //  存储到ls
-                                localStorage.setItem("eleToken", token);
-                                // 解析token
-                                const decode = jwt_decode(token);
-                                // console.log(decode);
-
-                                // token存储到vuex中
-                                this.$store.dispatch("setIsAutnenticated", !this.isEmpty(decode));
-                                this.$store.dispatch("setUser", decode);
-                                // 页面跳转
-                                this.$router.push('/index')
-                            })
-                        // .catch(err => {console.log("登陆失败")})                          
+                        return loginMothod.submit(this.loginUser)
                     }
                 });
-            },
-            isEmpty(value) {
-                return (
-                    value === undefined ||
-                    value === null ||
-                    (typeof value === "object" && Object.keys(value).length === 0) ||
-                    (typeof value === "string" && value.trim().length === 0)
-                );
             }
         }
     }
