@@ -1,6 +1,7 @@
 const path = require('path')
 const debug = process.env.NODE_ENV !== 'production'
 const goods = require("./data.json")
+const company = require("./company.json")
 module.exports = {
     baseUrl: '/', // 根域上下文目录
     outputDir: 'dist', // 构建输出目录
@@ -60,8 +61,15 @@ module.exports = {
             // http://localhost:8080/api/goods
             app.get('/api/goods', (req, res) => {
                 res.json(goods)
+            }),
+              // http://localhost:8080/api/qwe
+            app.get('/api/qwe', (req, res) => {
+                res.json(company)
             })
         },
+
+
+
         // vue-cli 解决Invalid Host header,
         // compress: true,
         disableHostCheck: true, // That solved it

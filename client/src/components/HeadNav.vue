@@ -47,13 +47,19 @@
         name: 'Headnav',
         data() {
             return {
-                dialogVisible: false
+                dialogVisible: false,
+                companyList: []
             }
         },
         computed: {
             user() {
                 return this.$store.getters.user;
             }
+        },
+        created() {
+            this.$axios.get("api/qwe").then(res => {
+                // console.log(res.data.data.names[0])
+            })
         },
         methods: {
             setDialogInfo(cmdItem) {

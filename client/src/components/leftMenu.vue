@@ -22,9 +22,15 @@
                     </el-submenu>
                 </template>
                  <router-link to="/foodlist">
-                    <el-menu-item index="0">
+                    <el-menu-item index="1">
                         <i class="fa fa-margin fa-server"></i>
                         <span slot="title">好吃食物</span>
+                    </el-menu-item>
+                </router-link>
+                 <router-link to="/companyTree">
+                    <el-menu-item index="2">
+                        <i class="fa fa-margin fa-server"></i>
+                        <span slot="title">公司tree</span>
                     </el-menu-item>
                 </router-link>
             </el-menu>

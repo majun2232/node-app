@@ -8,6 +8,8 @@ import Home from './views/Home'
 import infoshow from './views/infoshow'
 import foundlist from './views/FundList'
 import goodsShow from './views/goodsShow.vue'
+import companyTree from './views/companyTree.vue'
+
 Vue.use(Router)
 
 
@@ -47,6 +49,11 @@ const router=new Router({
           path: '/foodlist',
           name: 'foodlist',
           component: goodsShow
+        },
+        {
+          path: '/companyTree',
+          name: 'companyTree',
+          component: companyTree
         }
       ]
     },
