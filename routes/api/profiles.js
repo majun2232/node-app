@@ -4,6 +4,14 @@ const router = express.Router();
 const Profile = require("../../models/Profile");
 const passport =require("passport");
 
+// var moment = require('moment-timezone');
+
+// 后台转换时间失败,转用前端处理
+// console.log(moment('2018-10-06T13:24:42.512Z').tz("Asia/Tokyo").format('YYYY/MM/DD HH:mm:ss'))
+// console.log('上海：'+moment().tz("Asia/Shanghai").format('YYYY/MM/DD HH:mm:ss'))
+// console.log('香港：'+moment().tz("Asia/Shanghai").format('YYYY/MM/DD HH:mm:ss'))
+// console.log('日本：'+moment().tz("Asia/Tokyo").format('YYYY/MM/DD HH:mm:ss'))
+// console.log('纽约：'+moment().tz("America/New_York").format('YYYY/MM/DD HH:mm:ss'))
 
 
 // $route GET api/profiles/test

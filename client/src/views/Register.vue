@@ -41,7 +41,7 @@
 </template>
 
 <script>
-   import loginMothod from '../utils/login.js'
+    import loginMothod from '../utils/login.js'
     export default {
         name: 'register',
         data() {
@@ -128,26 +128,22 @@
                                     message: "账号注册成功!",
                                     type: 'success'
                                 })
+                                // 注册成功后直接调用登陆接口,免去再次跳转登陆界面
+                                loginMothod.submit({
+                                    "email": this.registerUser.email,
+                                    "password": this.registerUser.password2
+                                })
                             })
                             .catch(res => {
-                                // 注册成功
+                                // 错误
                                 this.$message({
-                                    message: "!",
-                                    type: 'success'
+                                    message: "注册失败!",
+                                    type: 'error'
                                 })
                             });
-                        this.$router.push('/login')
-                    //   debugger
-                    //    loginMothod.submit({"email":this.registerUser.email,"password":this.registerUser.password2})
-                    //    this.$router.push('/index')
-
-
-
+                        // this.$router.push('/login')                    
                     }
                 });
-
-
-                
             }
         }
     }
@@ -158,7 +154,6 @@
         position: relative;
         width: 100%;
         height: 100%;
-
     }
 
     .bg {

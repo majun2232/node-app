@@ -18,7 +18,8 @@
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
     "vue-template-compiler": "^2.5.17",
-    "element-ui": "2.4.8"
+    "element-ui": "2.4.8",
+    "moment-timezone":"0.5.21"
   },
   "postcss": {
     "plugins": {

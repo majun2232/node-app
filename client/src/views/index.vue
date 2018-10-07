@@ -12,7 +12,7 @@
   import HeadNav from '../components/HeadNav'
   import leftMenu from '../components/leftMenu'
   export default {
-    name: "index",
+    name: "qindex",
     data() {
       return {
 
@@ -29,7 +29,7 @@
   .index {
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
     min-width: 600px;
   }
 

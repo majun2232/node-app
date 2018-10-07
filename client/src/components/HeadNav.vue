@@ -1,7 +1,7 @@
 <template>
     <header class="head-nav">
         <el-row>
-            <el-col :span="6" class="logo-contener">
+            <el-col :span="16" class="logo-contener">
                 <img src='../assets/logo.jpg' alt="" class="logo">
                 <span class="title">卡索在线后台管理系统</span>
             </el-col>
@@ -73,8 +73,11 @@
         height: 60px;     
         padding: 5px;
         background: #324057;
+         /* background: #101216; */
         color: #fff;
         border-bottom: 1px solid #1f2d3d;
+
+        /* opacity:0.5; */
     }
 
     .logo-container {

@@ -5,7 +5,7 @@ import store from '../store'
 
 const login =  {
     submit(loginUser) {
-         console.log(loginUser)
+        //  console.log(loginUser)
         axios.post('apis/api/users/login', loginUser)
             .then(res => {
                 // 获取token
@@ -35,6 +35,5 @@ const login =  {
         );
     }
 }
-
 
 export default login
