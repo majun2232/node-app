@@ -7,6 +7,7 @@ import Login from './views/Login'
 import Home from './views/Home'
 import infoshow from './views/infoshow'
 import foundlist from './views/FundList'
+import goodsShow from './views/goodsShow.vue'
 Vue.use(Router)
 
 
@@ -41,6 +42,11 @@ const router=new Router({
           path: '/foundlist',
           name: 'FundList',
           component: foundlist,
+        },
+        {
+          path: '/foodlist',
+          name: 'foodlist',
+          component: goodsShow
         }
       ]
     },
@@ -60,6 +66,7 @@ const router=new Router({
       name: '/404',
       component: notfound
     }
+   
   ]
 })
 

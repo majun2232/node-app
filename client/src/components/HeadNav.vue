@@ -1,11 +1,23 @@
 <template>
     <header class="head-nav">
         <el-row>
-            <el-col :span="16" class="logo-contener">
+            <el-col :span="20" class="logo-contener">
                 <img src='../assets/logo.jpg' alt="" class="logo">
                 <span class="title">卡索在线后台管理系统</span>
             </el-col>
-            <el-col :span="6" class="user">
+            <el-col :span="2" class="company">
+                <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+
+                <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+                    <span>这是一段信息</span>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVisible = false">取 消</el-button>
+                        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                    </span>
+                </el-dialog>
+
+            </el-col>
+            <el-col :span="2" class="user">
                 <div class="userinfo">
                     <img :src="user.avatar" alt="" class="avatar">
                     <div class="welcome">
@@ -33,6 +45,11 @@
 <script>
     export default {
         name: 'Headnav',
+        data() {
+            return {
+                dialogVisible: false
+            }
+        },
         computed: {
             user() {
                 return this.$store.getters.user;
@@ -62,6 +79,13 @@
                 this.$store.dispatch('clearCurrentState');
                 // 跳转到登陆页面
                 this.$router.push('/login')
+            },
+            handleClose(done) {
+                this.$confirm('确认关闭？')
+                    .then(_ => {
+                        done();
+                    })
+                    .catch(_ => {});
             }
         }
     }
@@ -70,10 +94,10 @@
 <style scoped>
     .head-nav {
         width: 100%;
-        height: 60px;     
+        height: 60px;
         padding: 5px;
         background: #324057;
-         /* background: #101216; */
+        /* background: #101216; */
         color: #fff;
         border-bottom: 1px solid #1f2d3d;
 
@@ -98,6 +122,12 @@
         font-size: 22px;
         font-family: "Microsoft YaHei";
         letter-spacing: 3px;
+    }
+
+    .company {
+        /* line-height: 60px; */
+        /* text-align: right; */
+        /* padding-right: 10px; */
     }
 
     .user {

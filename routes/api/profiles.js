@@ -19,12 +19,12 @@ const passport =require("passport");
 // @access public
 
 // 开发时用于bug调试
-// const router : Router
-// router.get("/test", (req, res) => {
-//     res.json({
-//         msg: "Profile works"
-//     })
-// })
+
+router.get("/test", (req, res) => {
+    res.json({
+        msg: "Profile works"
+    })
+})
 
 // $route GET api/profiles/add
 // $desc 创建信息接口
@@ -109,6 +109,5 @@ router.delete('/delete/:id',passport.authenticate("jwt",{session:false}),(req,re
     .catch(err => res.status(404).json("删除失败!"))
     
 })
-
 
 module.exports = router;
