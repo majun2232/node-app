@@ -3,12 +3,7 @@ const types = {
   SET_USER: 'SET_USER' // 用户信息
 }
 const user = {
-  // types : {
-  //   SET_IS_AUTNENTIATED: 'SET_IS_AUTNENTIATED', // 是否认证通过
-  //   SET_USER: 'SET_USER' // 用户信息
-  // },
-  
-  state: {
+ state: {
     isAutnenticated: false, // 是否认证
     user: {}, // 存储用户信息
   },
