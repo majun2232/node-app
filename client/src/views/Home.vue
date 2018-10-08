@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="container">
-            <h1 class="title">卡索在线11</h1>
+            <h1 class="title">卡索在线1</h1>
             <p class="lead"> 前端小白,正在学习中! </p>
         </div>
     </div>
