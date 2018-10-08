@@ -41,6 +41,12 @@ const router = new Router({
           name: 'foodlist',
           component: () =>
             import('./views/goodsShow'),
+        },
+        {
+          path: '/companyTree',
+          name: 'companyTree',
+          component: () =>
+          import('./views/companyTree'),
         }
       ]
     },
