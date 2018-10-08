@@ -28,7 +28,7 @@
                         <span slot="title">好吃食物</span>
                     </el-menu-item>
                 </router-link>
-                 <router-link to="/companyTree">
+                <router-link to="/companyTree">
                     <el-menu-item index="1">
                         <i class="fa fa-margin fa-server"></i>
                         <span slot="title">公司树</span>
