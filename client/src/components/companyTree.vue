@@ -1,7 +1,5 @@
 <template>
-    <div class=''>
-        <el-tree :data="companyList" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
-    </div>
+        <el-tree :data="companyList" :props="defaultProps" @node-click="handleNodeClick" class='companytree'></el-tree> 
 </template>
 
 <script>
@@ -32,6 +30,9 @@
 </script>
 
 <style scoped>
-
+.companytree{
+    font-size: 16px;
+    color: #2e3648
+}
 
 </style>

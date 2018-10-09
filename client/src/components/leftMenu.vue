@@ -34,6 +34,13 @@
                         <span slot="title">公司树</span>
                     </el-menu-item>
                 </router-link>
+
+                    <router-link to="/test">
+                    <el-menu-item index="2">
+                        <i class="fa fa-margin fa-server"></i>
+                        <span slot="title">测试</span>
+                    </el-menu-item>
+                </router-link>
             </el-menu>
         </el-col>
     </el-row>
@@ -80,7 +87,7 @@
 <style scoped>
     .menu_page {
         position: fixed;
-        top: 71px;
+        top: 60px;
         left: 0;
         min-height: 100%;
         background-color: #324057;

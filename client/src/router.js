@@ -46,8 +46,15 @@ const router = new Router({
           path: '/companyTree',
           name: 'companyTree',
           component: () =>
-          import('./views/companyTree'),
+          import('./components/companyTree.vue'),
+        },
+        {
+          path: '/test',
+          name: 'test',
+          component: () =>
+          import('./views/test'),
         }
+
       ]
     },
     {

@@ -12,11 +12,13 @@
 
                 <span class="title">卡索在线后台管理系统</span>
             </el-col>
-            <el-col :span="2" class="company">
+            <el-col :span="2" >
                 <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
 
-                <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
-                    <span>这是一段信息</span>
+                <el-dialog title="选择公司" :visible.sync="dialogVisible"  width=" 600px" :before-close="handleClose" >
+
+                    <!-- <hr class="fengexiang" /> -->
+                    <companyTree/>
                     <span slot="footer" class="dialog-footer">
                         <el-button @click="dialogVisible = false">取 消</el-button>
                         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
@@ -51,9 +53,10 @@
 
 <script>
     import hamburger from './Hamburger'
-     import {
-    mapGetters
-  } from 'vuex'
+    import {
+        mapGetters
+    } from 'vuex'
+    import companyTree from './companyTree.vue'
     export default {
         name: 'Headnav',
         data() {
@@ -64,15 +67,16 @@
         },
         components: {
             hamburger,
+            companyTree
         },
         computed: {
             // user() {
             //     return this.$store.getters.user;
             // },
             //  如下声明,可以在组件中直接拿到store中的数据
-      ...mapGetters([
-        'user','sidebar'
-      ])
+            ...mapGetters([
+                'user', 'sidebar'
+            ])
         },
         methods: {
             setDialogInfo(cmdItem) {
@@ -145,10 +149,10 @@
         letter-spacing: 3px;
     }
 
-    .company {
-        /* line-height: 60px; */
-        /* text-align: right; */
-        /* padding-right: 10px; */
+    .fengexiang {
+        height: 1px;
+        border-top: 1px solid #ddd;
+        text-align: center;
     }
 
     .user {
@@ -196,4 +200,7 @@
     .el-dropdown {
         color: #fff;
     }
+ 
 </style>
+
+
